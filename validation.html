@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns= "http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css"/>
+<script language="javascript" type="text/javascript">
+function checkform(pform1) {
+ var str = pform1.password.value;
+ var email = pform1.email.value;
+ var phone = pform1.phone.value;
+ var cleanstr = phone.replace(/[\(\)\.\-\ ]/g, '');
+ var err = {};
+ var validemail= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+ 
+ if((str.length<4) || (str.length>8)) {
+ err.message ="Invalid pwd Length";
+ err.field=pform1.password;
+ }
+ if(!(validation.test(email))) {
+ err.message="invalid email";
+ err.field=pform1.email;
+ }
+ if(isNaN(parseInt(cleanstr))) {
+  err.message = "invalid phone";
+  err.field = pform1.phone;
+ }
+ 
+  return true;
+}
+</script>
+</head>
+<body>
+<h1>Improved Form Handling with JavaScript</h1>
+<form action= "" method="POST" onsubmit = "return checkform(this);">
+<div id ="errmsgbox"></div>
+<div id="divError"></div>
+</div>
+<fieldset class "Credentials">
+<legend>Access Credentials</legend>
+<table border="0">
+</tr>
+<td><lable for="username" class="hover">Username</label></td>
+<td><input type="text" id="username" class="required text"/>
+<span class="style">*</span><br>
+<tr>
+<td><lable for="password" class="hover">Password</label></td>
+<td><input type="password" id="password" class="required text"/>
+<span class="style">*</span><br>
+<span class="tooltip">Mimimum four and maximum eight char</span></tr>
+<tr>
+<td><lable for="email" class="hover">Email</label></td>
+<td><input type="email" id="email" class="required text"/>
+<span class="style">*</span><br></td></tr>
+</table>
+</fieldset>
+<legend>OthervInfo</legend>
+<table border = "0">
+<tr>
+<td width= "59"><label for="name">Name</label></td>
+<td width ="207"><input type= "text" id="name" class="required text"></td>
+<span class="style">*</span></td>
+</tr>
+<tr><td><label for ="phone">phone</label></td>
+<td><input type="text" id="phone" class="phone text"/></td>
+</tr>
+<tr>
+<td colspan ="2"><input type="submit" value="submit form" class="submit"></td>
+</tr>
+<tr>
+<td colspan= "2">* = Required Field</td></tr>
+</table>
+</fieldset>
+</form>
+</body
+</html>

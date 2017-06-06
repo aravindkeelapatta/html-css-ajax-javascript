@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form name = "myform" method="post" action="" onsubmit="myFunction()">
+Name: <input type="text" name="name"><br/>
+Pwd : <input type = "password" name= "password"><br/><br/>
+<input type = "submit" value="Register">
+</form>
+
+<script>
+function myFunction() {
+   var uname = document.myform.name.value;
+   var pwd = document.myform.password.value;
+   
+   if(uname == null || uname == "") {
+     alert("uname can't be null");
+	 return false;
+   } else if(pwd.length < 6){
+       alert("pwd atleast six characters")
+	   return false;
+   }
+}
+</script>
+</body>
+</html>

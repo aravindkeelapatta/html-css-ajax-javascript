@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <h1>Performing Arithmetic Operations</h1>
+ </head>
+ <body>
+<form name = "myform" method = "post">
+Enter First number <input type="Number"  name="value1"><br>
+Enter Second number <input type="Number"  name="value2"><br>
+  
+  <input type="button" value="submit" onclick="result()">
+  
+ </form> 
+  
+ <script>
+  function result(){
+  var x= parseInt(document.myform.value1.value);
+  var y= parseInt(document.myform.value2.value);
+  var z = x + y;
+  document.write("The Addition Of Two Numbers Is:" +z);
+  }
+ </script>
+ 
+ </body>
+</html>
